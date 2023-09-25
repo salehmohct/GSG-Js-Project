@@ -2,6 +2,7 @@ let formGenerator = document.getElementById("NameGenerator");
 let nameText = document.getElementById("YourName");
 let generateButton = document.getElementById("Generator");
 const yourCard = document.getElementById("yourCard");
+const clearAll = document.getElementById("clearAll");
 let arrayOfName = [];
 formGenerator.addEventListener("click", (e) => {
   e.preventDefault();
@@ -26,6 +27,7 @@ const CreateElement = (arrayOfName) => {
   yourCard.innerHTML = "";
   arrayOfName.forEach((name) => {
     const div = document.createElement("div");
+    div.className = "Card";
     div.setAttribute("taskid", name.id);
     const cardHrader = document.createElement("div");
     cardHrader.className = "cardHrader";
@@ -55,11 +57,17 @@ const CreateElement = (arrayOfName) => {
 yourCard.addEventListener("click", (e) => {
   if (e.target.classList.contains("deleteButton")) {
     id = e.target.parentElement.getAttribute("taskid");
-    // e.target.parentElement.remove();حذف فقط من الدوم هيك
-    deleteButton(id); //هيك بحذفه من المصفوفة نفسها يعني لو بتعامل مع اي بي اي
+    // e.target.parentElement.remove();//delete from dom and still exist in array
+    deleteButton(id); //delete from array
   }
 });
 const deleteButton = (id) => {
   arrayOfName = arrayOfName.filter((Name) => Name.id != id);
   CreateElement(arrayOfName);
 };
+
+clearAll.addEventListener("click", () => {
+  //   yourCard.remove(); //delete from dom and still exist in array
+  arrayOfName.length = 0; //delete from array
+  CreateElement(arrayOfName);
+});
