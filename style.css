@@ -1,0 +1,40 @@
+.NameInput {
+  padding: 10px;
+  border-radius: 10px;
+}
+.Generator {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.yourCard {
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid darkblue;
+  border-radius: 5px;
+}
+.cardHrader {
+  text-align: center;
+  margin: 0;
+  background-color: red;
+  color: white;
+  height: 80px;
+}
+.cardHrader h1 {
+  margin: 0;
+}
+.cardBody {
+  background-color: aquamarine;
+  height: 90px;
+}
+.cardBody p {
+  margin: 0;
+}
+
+.deleteButton {
+  display: block;
+  margin: auto;
+}
