@@ -15,7 +15,7 @@ generateButton.addEventListener("click", () => {
   CreateElement(arrayOfName);
 });
 const addName = (text) => {
-  const generateId = Math.floor(Math.random() * 20);
+  const generateId = Math.floor(Math.random() * 1000);
   const Name = {
     title: text,
     id: generateId,
